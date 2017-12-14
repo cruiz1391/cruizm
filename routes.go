@@ -45,7 +45,8 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w,r,"sitemap.xml")
 		return
 	}
-	http.Redirect(w,r,"/", http.StatusMovedPermanently)
+	w.WriteHeader(http.StatusNotFound)
+	fmt.Fprint(w, "Not Found")
 }
 
 func assetsHandler(w http.ResponseWriter, r *http.Request){
