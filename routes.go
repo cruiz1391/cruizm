@@ -44,6 +44,9 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	} else if r.URL.Path=="/sitemap.xml" {
 		http.ServeFile(w,r,"sitemap.xml")
 		return
+	} else if r.URL.Path=="/google5ee3a2a1147815de.html"{
+		http.ServeFile(w,r,"google5ee3a2a1147815de.html")
+		return
 	}
 	w.WriteHeader(http.StatusNotFound)
 	fmt.Fprint(w, "Not Found")
